@@ -1,0 +1,187 @@
+<html xmlns:date="http://exslt.org/dates-and-times">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./CSS/default.css">
+<title>pHash</title>
+</head>
+<body>
+<h1>pHash</h1>
+<p>
+<span class="title">Plugin Identifier: </span>20000</p>
+<p>
+<span class="title">Summary</span>
+</p>
+<ex4D:plugin-description xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for pHash here -->
+<p>This plugin is a 4D implementation of the <a href="http://www.phash.org">pHash</a> open source perceptual hash library.</p>
+<p>It can compute and compare the perceptual hashes of PNG, BMP and JPEG files.</p>
+<p>You can use it, for example, to search similar images of different file types stored in your database.</p>
+<p>Note: Audio and Video files are not supported.</p>
+<p>Note: If you create the PNG on Mac OS, make sure the "simple file" option is NOT used. Otherwise the hash value will be zero.</p>
+</ex4D:plugin-description>
+<a name="command:1"></a>
+<h2>Compute</h2>
+<a name="command:1,1"></a>
+<h3>PH Compute DCT</h3>
+<p>
+<code>status:=PH Compute DCT (path; hash)</code>
+</p>
+<p>
+<code>path (TEXT)</code>
+</p>
+<ex4D:argument argument-id="1" label="path" type="T" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $1 (TEXT) here-->
+</ex4D:argument>
+<p>
+<code>hash (TEXT)</code>
+</p>
+<ex4D:argument argument-id="2" label="hash" type="T" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $2 (TEXT) here-->
+<p>String representation of unsigned 64 bit integer hash.</p>
+</ex4D:argument>
+<p>
+<code>status</code> (LONGINT)<br>
+<ex4D:return-value label="status" type="L" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for return value (LONGINT) here-->
+<p>Less than 0 for error.</p>
+</ex4D:return-value>
+</p>
+<p>
+<span class="title">Discussion</span>
+</p>
+<ex4D:command-description xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for PH Compute DCT here -->
+</ex4D:command-description>
+<a name="command:2"></a>
+<h2>Compare</h2>
+<a name="command:2,4"></a>
+<h3>PH Compare DCT</h3>
+<p>
+<code>hammingDistance:=PH Compare DCT (hashA; hashB)</code>
+</p>
+<p>
+<code>hashA (TEXT)</code>
+</p>
+<ex4D:argument argument-id="1" label="hashA" type="T" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $1 (TEXT) here-->
+<p>String representation of unsigned 64 bit integer hash.</p>
+</ex4D:argument>
+<p>
+<code>hashB (TEXT)</code>
+</p>
+<ex4D:argument argument-id="2" label="hashB" type="T" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $2 (TEXT) here-->
+<p>String representation of unsigned 64 bit integer hash.</p>
+</ex4D:argument>
+<p>
+<code>hammingDistance</code> (LONGINT)<br>
+<ex4D:return-value label="hammingDistance" type="L" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for return value (LONGINT) here-->
+<p>Hamming distance between the two hashes.</p>
+</ex4D:return-value>
+</p>
+<p>
+<span class="title">Discussion</span>
+</p>
+<ex4D:command-description xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for PH Compare DCT here -->
+</ex4D:command-description>
+<a name="command:2,2"></a>
+<h3>PH Compare MH</h3>
+<p>
+<code>hammingDistance:=PH Compare MH (pathA; pathB; alpha; level)</code>
+</p>
+<p>
+<code>pathA (TEXT)</code>
+</p>
+<ex4D:argument argument-id="1" label="pathA" type="T" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $1 (TEXT) here-->
+</ex4D:argument>
+<p>
+<code>pathB (TEXT)</code>
+</p>
+<ex4D:argument argument-id="2" label="pathB" type="T" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $2 (TEXT) here-->
+</ex4D:argument>
+<p>
+<code>alpha (REAL)</code>
+</p>
+<ex4D:argument argument-id="3" label="alpha" type="8" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $3 (REAL) here-->
+<p>Scale factor for marr wavelet.</p>
+</ex4D:argument>
+<p>
+<code>level (REAL)</code>
+</p>
+<ex4D:argument argument-id="4" label="level" type="8" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $4 (REAL) here-->
+<p>Level of scale factor.</p>
+</ex4D:argument>
+<p>
+<code>hammingDistance</code> (REAL)<br>
+<ex4D:return-value label="hammingDistance" type="8" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for return value (REAL) here-->
+<p>Normalized hamming distance between the two hashes.</p>
+</ex4D:return-value>
+</p>
+<p>
+<span class="title">Discussion</span>
+</p>
+<ex4D:command-description xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for PH Compare MH here -->
+</ex4D:command-description>
+<a name="command:2,3"></a>
+<h3>PH Compare RADISH</h3>
+<p>
+<code>pcc:=PH Compare RADISH (pathA; pathB; sigma; gamma; N)</code>
+</p>
+<p>
+<code>pathA (TEXT)</code>
+</p>
+<ex4D:argument argument-id="1" label="pathA" type="T" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $1 (TEXT) here-->
+</ex4D:argument>
+<p>
+<code>pathB (TEXT)</code>
+</p>
+<ex4D:argument argument-id="2" label="pathB" type="T" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $2 (TEXT) here-->
+</ex4D:argument>
+<p>
+<code>sigma (REAL)</code>
+</p>
+<ex4D:argument argument-id="3" label="sigma" type="8" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $3 (REAL) here-->
+<p>Deviation for a gaussian filter function.</p>
+</ex4D:argument>
+<p>
+<code>gamma (REAL)</code>
+</p>
+<ex4D:argument argument-id="4" label="gamma" type="8" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $4 (REAL) here-->
+<p>Gamma correction on the input image.</p>
+</ex4D:argument>
+<p>
+<code>N (LONGINT)</code>
+</p>
+<ex4D:argument argument-id="5" label="N" type="L" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for $5 (LONGINT) here-->
+<p>Number of angles to consider.</p>
+</ex4D:argument>
+<p>
+<code>pcc</code> (REAL)<br>
+<ex4D:return-value label="pcc" type="8" xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for return value (REAL) here-->
+<p>Peak of cross correlation.</p>
+</ex4D:return-value>
+</p>
+<p>
+<span class="title">Discussion</span>
+</p>
+<ex4D:command-description xmlns:ex4D="http://www.4d.com/plugin">
+<!-- write documentation for PH Compare RADISH here -->
+</ex4D:command-description>
+<p class="footer">
+<span class="title">Documentation Update: </span>2014-06-24T04:39:2609:00</p>
+</body>
+</html>
