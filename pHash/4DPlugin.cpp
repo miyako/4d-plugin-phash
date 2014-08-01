@@ -90,10 +90,18 @@ void PH_Compare_DCT(sLONG_PTR *pResult, PackagePtr pParams)
 	Param1.fromParamAtIndex(pParams, 1);
 	Param2.fromParamAtIndex(pParams, 2);	
 	CUTF8String _hasha, _hashb;	
+
 	Param1.copyUTF8String(&_hasha);
 	Param2.copyUTF8String(&_hashb);	
-	ulong64 hasha = strtoll((const char *)_hasha.c_str(), NULL, 10);
-	ulong64 hashb = strtoll((const char *)_hashb.c_str(), NULL, 10);
+	
+	std::stringstream _Param1((const char *)_hasha.c_str());
+	std::stringstream _Param2((const char *)_hashb.c_str());
+	
+	ulong64 hasha;
+	ulong64 hashb;
+	
+	_Param1 >> hasha;
+	_Param2 >> hashb;
 	
 	int hamming_distance = ph_hamming_distance(hasha, hashb);
 
@@ -105,18 +113,17 @@ void PH_Compare_MH(sLONG_PTR *pResult, PackagePtr pParams)
 {
 	C_TEXT Param1;
 	C_TEXT Param2;
-//	C_REAL Param3;
+	C_REAL Param3;
 	C_REAL Param4;
-	C_REAL Param5;
 	C_REAL returnValue;
 	
 	Param1.fromParamAtIndex(pParams, 1);
 	Param2.fromParamAtIndex(pParams, 2);
-	Param4.fromParamAtIndex(pParams, 3);
-	Param5.fromParamAtIndex(pParams, 4);
+	Param3.fromParamAtIndex(pParams, 3);
+	Param4.fromParamAtIndex(pParams, 4);
 
-	float alpha = Param4.getDoubleValue();
-	float lvl = Param5.getDoubleValue();	
+	float alpha = Param3.getDoubleValue();
+	float lvl = Param4.getDoubleValue();	
 	int hashalen, hashblen;
 	
 	uint8_t* hasha = ph_mh_imagehash(paramToPathStr(Param1), hashalen, alpha, lvl);
@@ -131,23 +138,20 @@ void PH_Compare_RADISH(sLONG_PTR *pResult, PackagePtr pParams)
 {
 	C_TEXT Param1;
 	C_TEXT Param2;
-//	C_REAL Param3;
+	C_REAL Param3;
 	C_REAL Param4;
-	C_REAL Param5;
-	C_LONGINT Param6;
-//	C_REAL Param7;
+	C_LONGINT Param5;
 	C_REAL returnValue;
 	
 	Param1.fromParamAtIndex(pParams, 1);
 	Param2.fromParamAtIndex(pParams, 2);
-	Param4.fromParamAtIndex(pParams, 3);
-	Param5.fromParamAtIndex(pParams, 4);
-	Param6.fromParamAtIndex(pParams, 5);
-//	Param7.fromParamAtIndex(pParams, 6);
+	Param3.fromParamAtIndex(pParams, 3);
+	Param4.fromParamAtIndex(pParams, 4);
+	Param5.fromParamAtIndex(pParams, 5);
 	
-	double sigma = Param4.getDoubleValue();
-	double gamma = Param5.getDoubleValue();	
-	int N = Param6.getIntValue();
+	double sigma = Param3.getDoubleValue();
+	double gamma = Param4.getDoubleValue();	
+	int N = Param5.getIntValue();
 	double threshold = 0.9;	
 	
 	Digest x, y;

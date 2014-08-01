@@ -10,6 +10,12 @@
 		executables = (
 			D1336907195900A4001E37A8 /* 4D v13.5 */,
 		);
+		expressions = (
+			"",
+			"strtoll((const char *)_hasha.c_str(), NULL, 10)",
+			"_hashb.c_str()",
+			"_hasha.c_str()",
+		);
 		perUserDictionary = {
 			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
@@ -17,7 +23,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					22,
 					300,
-					244,
+					473,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXExecutablesDataSource_ActiveFlagID,
@@ -30,7 +36,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					356,
+					585,
 					20,
 					48,
 					43,
@@ -69,26 +75,15 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 425263135;
-			PBXWorkspaceStateSaveDate = 425263135;
+			PBXPerProjectTemplateStateSaveDate = 428571845;
+			PBXWorkspaceStateSaveDate = 428571845;
 		};
 		perUserProjectItems = {
 			D133693B1959075A001E37A8 /* PlistBookmark */ = D133693B1959075A001E37A8 /* PlistBookmark */;
-			D133696819590A6A001E37A8 /* PBXTextBookmark */ = D133696819590A6A001E37A8 /* PBXTextBookmark */;
-			D13369B6195915AF001E37A8 /* PBXBookmark */ = D13369B6195915AF001E37A8 /* PBXBookmark */;
 			D13369BF19591DB8001E37A8 /* PBXTextBookmark */ = D13369BF19591DB8001E37A8 /* PBXTextBookmark */;
-			D13369D619591E16001E37A8 /* PBXTextBookmark */ = D13369D619591E16001E37A8 /* PBXTextBookmark */;
 			D13369D719591E16001E37A8 /* PBXTextBookmark */ = D13369D719591E16001E37A8 /* PBXTextBookmark */;
-			D13369FB19592038001E37A8 /* PBXTextBookmark */ = D13369FB19592038001E37A8 /* PBXTextBookmark */;
-			D1336AD11959340D001E37A8 /* PBXTextBookmark */ = D1336AD11959340D001E37A8 /* PBXTextBookmark */;
-			D1336AD81959340D001E37A8 /* PBXBookmark */ = D1336AD81959340D001E37A8 /* PBXBookmark */;
-			D1336AE31959347F001E37A8 /* PBXBookmark */ = D1336AE31959347F001E37A8 /* PBXBookmark */;
-			D1336AED19593550001E37A8 /* PBXTextBookmark */ = D1336AED19593550001E37A8 /* PBXTextBookmark */;
-			D1336AF8195935AE001E37A8 /* PBXTextBookmark */ = D1336AF8195935AE001E37A8 /* PBXTextBookmark */;
-			D1336AF9195935AE001E37A8 /* PBXTextBookmark */ = D1336AF9195935AE001E37A8 /* PBXTextBookmark */;
-			D1336AFB195935AE001E37A8 /* PBXTextBookmark */ = D1336AFB195935AE001E37A8 /* PBXTextBookmark */;
-			D1336AFD195935AE001E37A8 /* PBXTextBookmark */ = D1336AFD195935AE001E37A8 /* PBXTextBookmark */;
-			D1336AFF195935AE001E37A8 /* PBXTextBookmark */ = D1336AFF195935AE001E37A8 /* PBXTextBookmark */;
+			D1570409198B7D4500657EAC /* PBXTextBookmark */ = D1570409198B7D4500657EAC /* PBXTextBookmark */;
+			D1570423198B833200657EAC /* PBXTextBookmark */ = D1570423198B833200657EAC /* PBXTextBookmark */;
 		};
 		sourceControlManager = D13368F819590055001E37A8 /* Source Control */;
 		userBuildSettings = {
@@ -102,11 +97,18 @@
 			sepNavWindowFrame = "{{130, 187}, {911, 581}}";
 		};
 	};
+	18B684EE06944F2000CC6A1E /* 4DPluginAPI.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {867, 108875}}";
+			sepNavSelRange = "{1374, 0}";
+			sepNavVisRange = "{1309, 472}";
+		};
+	};
 	18B684FE06944F8800CC6A1E /* 4DPlugin.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {600, 2288}}";
-			sepNavSelRange = "{3939, 0}";
-			sepNavVisRange = "{2460, 597}";
+			sepNavIntBoundsRect = "{{0, 0}, {748, 2483}}";
+			sepNavSelRange = "{2371, 0}";
+			sepNavVisRange = "{1533, 840}";
 			sepNavWindowFrame = "{{433, 71}, {942, 803}}";
 		};
 	};
@@ -195,19 +197,6 @@
 		path = /Applications/4D/13.5/158796/4D.app;
 		sourceTree = "<absolute>";
 	};
-	D1336926195906DE001E37A8 /* test_imagephash.cpp */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.cpp.cpp;
-		name = test_imagephash.cpp;
-		path = "/Users/miyako/Downloads/pHash-0.9.6/examples/test_imagephash.cpp";
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {852, 2496}}";
-			sepNavSelRange = "{1003, 30}";
-			sepNavVisRange = "{376, 920}";
-			sepNavWindowFrame = "{{13, 261}, {911, 581}}";
-		};
-	};
 	D133693B1959075A001E37A8 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D01CCD10486CAD60068D4B7 /* Info.plist */;
@@ -217,34 +206,7 @@
 		);
 		name = /Users/miyako/Desktop/pHash/Info.plist;
 		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	D133693F1959075A001E37A8 /* pHash.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = pHash.h;
-		path = /Users/miyako/Desktop/pHash/include/MacOS/pHash.h;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1118, 8489}}";
-			sepNavSelRange = "{5670, 39}";
-			sepNavVisRange = "{4815, 2091}";
-			sepNavWindowFrame = "{{-4, 54}, {942, 803}}";
-		};
-	};
-	D133696819590A6A001E37A8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D133693F1959075A001E37A8 /* pHash.h */;
-		name = "pHash.h: 50";
-		rLen = 0;
-		rLoc = 1330;
-		rType = 0;
-		vrLen = 352;
-		vrLoc = 1075;
-	};
-	D13369B6195915AF001E37A8 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = D1336926195906DE001E37A8 /* test_imagephash.cpp */;
+		rLoc = 9223372036854775808;
 	};
 	D13369BF19591DB8001E37A8 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -255,22 +217,6 @@
 		rType = 0;
 		vrLen = 191;
 		vrLoc = 3;
-	};
-	D13369C119591DB8001E37A8 /* CImg.h */ = {
-		isa = PBXFileReference;
-		name = CImg.h;
-		path = /Users/miyako/Desktop/pHash/include/CImg.h;
-		sourceTree = "<absolute>";
-	};
-	D13369D619591E16001E37A8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D13369C119591DB8001E37A8 /* CImg.h */;
-		name = "CImg.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 615;
-		vrLoc = 0;
 	};
 	D13369D719591E16001E37A8 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -284,173 +230,10 @@
 	};
 	D13369D819591E16001E37A8 /* basic_string.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = basic_string.h;
 		path = "/Xcode3/SDKs/MacOSX10.5.sdk/usr/include/c++/4.2.1/bits/basic_string.h";
 		sourceTree = "<absolute>";
-	};
-	D13369FB19592038001E37A8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D13369FC19592038001E37A8 /* stdlib.h */;
-		rLen = 1;
-		rLoc = 183;
-		rType = 1;
-	};
-	D13369FC19592038001E37A8 /* stdlib.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = stdlib.h;
-		path = /Xcode3/SDKs/MacOSX10.4u.sdk/usr/include/stdlib.h;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {852, 4108}}";
-			sepNavSelRange = "{5904, 39}";
-			sepNavVisRange = "{7884, 810}";
-		};
-	};
-	D1336AD11959340D001E37A8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 18B684FE06944F8800CC6A1E /* 4DPlugin.cpp */;
-		name = "4DPlugin.cpp: 165";
-		rLen = 0;
-		rLoc = 3939;
-		rType = 0;
-		vrLen = 636;
-		vrLoc = 2421;
-	};
-	D1336AD31959340D001E37A8 /* documentation.xml */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = text.xml;
-		name = documentation.xml;
-		path = /Users/miyako/Desktop/pHash/pHash.4dbase/Plugins/pHash.bundle/Contents/Resources/documentation.xml;
-		sourceTree = "<absolute>";
-	};
-	D1336AD51959340D001E37A8 /* documentation.xml */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = text.xml;
-		name = documentation.xml;
-		path = /Users/miyako/Desktop/pHash/pHash.4dbase/Plugins/pHash.bundle/Contents/Resources/documentation.xml;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1048, 1586}}";
-			sepNavSelRange = "{3780, 0}";
-			sepNavVisRange = "{2527, 1973}";
-		};
-	};
-	D1336AD81959340D001E37A8 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = D1336AD31959340D001E37A8 /* documentation.xml */;
-	};
-	D1336AE31959347F001E37A8 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = D133693F1959075A001E37A8 /* pHash.h */;
-	};
-	D1336AED19593550001E37A8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D1336AD51959340D001E37A8 /* documentation.xml */;
-		name = "documentation.xml: 3";
-		rLen = 1;
-		rLoc = 108;
-		rType = 0;
-		vrLen = 836;
-		vrLoc = 0;
-	};
-	D1336AF8195935AE001E37A8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 18B684FE06944F8800CC6A1E /* 4DPlugin.cpp */;
-		name = "4DPlugin.cpp: 165";
-		rLen = 0;
-		rLoc = 3939;
-		rType = 0;
-		vrLen = 597;
-		vrLoc = 2460;
-	};
-	D1336AF9195935AE001E37A8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D1336AFA195935AE001E37A8 /* documentation.xml */;
-		name = "documentation.xml: 94";
-		rLen = 0;
-		rLoc = 3780;
-		rType = 0;
-		vrLen = 1973;
-		vrLoc = 2527;
-	};
-	D1336AFA195935AE001E37A8 /* documentation.xml */ = {
-		isa = PBXFileReference;
-		name = documentation.xml;
-		path = /Users/miyako/Desktop/pHash/pHash.4dbase/Plugins/pHash.bundle/Contents/Resources/documentation.xml;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1048, 1586}}";
-			sepNavSelRange = "{3780, 0}";
-			sepNavVisRange = "{2527, 1973}";
-			sepNavWindowFrame = "{{636, 74}, {751, 804}}";
-		};
-	};
-	D1336AFB195935AE001E37A8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D1336AFC195935AE001E37A8 /* pHash.h */;
-		name = "pHash.h: 230";
-		rLen = 39;
-		rLoc = 5670;
-		rType = 0;
-		vrLen = 2091;
-		vrLoc = 4815;
-	};
-	D1336AFC195935AE001E37A8 /* pHash.h */ = {
-		isa = PBXFileReference;
-		name = pHash.h;
-		path = /Users/miyako/Desktop/pHash/include/MacOS/pHash.h;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {635, 9178}}";
-			sepNavSelRange = "{1330, 0}";
-			sepNavVisRange = "{1176, 259}";
-			sepNavWindowFrame = "{{0, 54}, {942, 803}}";
-		};
-	};
-	D1336AFD195935AE001E37A8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D1336AFE195935AE001E37A8 /* test_imagephash.cpp */;
-		name = "test_imagephash.cpp: 34";
-		rLen = 30;
-		rLoc = 1003;
-		rType = 0;
-		vrLen = 920;
-		vrLoc = 376;
-	};
-	D1336AFE195935AE001E37A8 /* test_imagephash.cpp */ = {
-		isa = PBXFileReference;
-		name = test_imagephash.cpp;
-		path = "/Users/miyako/Downloads/pHash-0.9.6/examples/test_imagephash.cpp";
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {852, 2496}}";
-			sepNavSelRange = "{1003, 30}";
-			sepNavVisRange = "{376, 920}";
-			sepNavWindowFrame = "{{724, 230}, {911, 581}}";
-		};
-	};
-	D1336AFF195935AE001E37A8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = D1336B00195935AE001E37A8 /* stdlib.h */;
-		name = "stdlib.h: 184";
-		rLen = 39;
-		rLoc = 5904;
-		rType = 0;
-		vrLen = 1070;
-		vrLoc = 8100;
-	};
-	D1336B00195935AE001E37A8 /* stdlib.h */ = {
-		isa = PBXFileReference;
-		name = stdlib.h;
-		path = /Xcode3/SDKs/MacOSX10.4u.sdk/usr/include/stdlib.h;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {852, 4108}}";
-			sepNavSelRange = "{5904, 39}";
-			sepNavVisRange = "{8100, 1070}";
-			sepNavWindowFrame = "{{268, 61}, {911, 581}}";
-		};
 	};
 	D1392DD713582171004911A5 /* C_BLOB.cpp */ = {
 		uiCtxt = {
@@ -466,6 +249,26 @@
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{3, 191}";
 		};
+	};
+	D1570409198B7D4500657EAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 18B684FE06944F8800CC6A1E /* 4DPlugin.cpp */;
+		name = "4DPlugin.cpp: 98";
+		rLen = 0;
+		rLoc = 2187;
+		rType = 0;
+		vrLen = 929;
+		vrLoc = 1531;
+	};
+	D1570423198B833200657EAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 18B684FE06944F8800CC6A1E /* 4DPlugin.cpp */;
+		name = "4DPlugin.cpp: 115";
+		rLen = 0;
+		rLoc = 2371;
+		rType = 0;
+		vrLen = 840;
+		vrLoc = 1533;
 	};
 	D19CC17C1353782E0004336E /* C_TEXT.cpp */ = {
 		uiCtxt = {
