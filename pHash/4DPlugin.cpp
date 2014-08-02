@@ -22,18 +22,34 @@
 
 #include "pHash.h"
 
-const char *int64ToStr(ulong64 value)
+void int64ToParam(ulong64 value, C_TEXT &param)
 {
+#ifndef __APPLE__ 
+	char buffer[65];
+	memset(buffer, 0, 65);
+	_ui64toa(value, buffer, 10);
+	CUTF8String _value((const uint8_t *)buffer);
+	param.setUTF8String(&_value);
+#else
 	std::stringstream stream;
 	stream << value;
-	return stream.str().c_str();
+	CUTF8String _value((const uint8_t *)stream.str().c_str());
+	param.setUTF8String(&_value);
+#endif
 }
 
-const char *paramToPathStr(C_TEXT &param){
-	CUTF8String path;
+void paramToPathStr(C_TEXT &param, std::string &path){
+#if defined(_MSC_VER)
+	char str[1024];
+	setlocale( LC_ALL, "" );
+	wcstombs(str, (wchar_t*)param.getUTF16StringPtr(), 1024);
+	path = str;
+#else
+	CUTF8String _path;
 	param.convertPath();
-	param.copyUTF8String(&path);	
-	return (const char *)path.c_str();
+	param.copyUTF8String(&_path);	
+	path = (const char *)_path.c_str();
+#endif
 }
 
 void PluginMain(int32_t selector, PA_PluginParameters params)
@@ -43,12 +59,12 @@ void PluginMain(int32_t selector, PA_PluginParameters params)
 		int32_t pProcNum = selector;
 		sLONG_PTR *pResult = (sLONG_PTR *)params->fResult;
 		PackagePtr pParams = (PackagePtr)params->fParameters;
-
+		
 		CommandDispatcher(pProcNum, pResult, pParams); 
 	}
 	catch(...)
 	{
-
+		
 	}
 }
 
@@ -86,11 +102,11 @@ void PH_Compare_DCT(sLONG_PTR *pResult, PackagePtr pParams)
 	C_TEXT Param1;
 	C_TEXT Param2;
 	C_LONGINT returnValue;
-
+	
 	Param1.fromParamAtIndex(pParams, 1);
 	Param2.fromParamAtIndex(pParams, 2);	
 	CUTF8String _hasha, _hashb;	
-
+	
 	Param1.copyUTF8String(&_hasha);
 	Param2.copyUTF8String(&_hashb);	
 	
@@ -104,7 +120,7 @@ void PH_Compare_DCT(sLONG_PTR *pResult, PackagePtr pParams)
 	_Param2 >> hashb;
 	
 	int hamming_distance = ph_hamming_distance(hasha, hashb);
-
+	
 	returnValue.setIntValue(hamming_distance);
 	returnValue.setReturn(pResult);
 }
@@ -121,13 +137,17 @@ void PH_Compare_MH(sLONG_PTR *pResult, PackagePtr pParams)
 	Param2.fromParamAtIndex(pParams, 2);
 	Param3.fromParamAtIndex(pParams, 3);
 	Param4.fromParamAtIndex(pParams, 4);
-
+	
 	float alpha = Param3.getDoubleValue();
 	float lvl = Param4.getDoubleValue();	
 	int hashalen, hashblen;
 	
-	uint8_t* hasha = ph_mh_imagehash(paramToPathStr(Param1), hashalen, alpha, lvl);
-	uint8_t* hashb = ph_mh_imagehash(paramToPathStr(Param2), hashblen, alpha, lvl);	
+	std::string _Param1, _Param2;
+	paramToPathStr(Param1, _Param1);
+	paramToPathStr(Param2, _Param2);
+	
+	uint8_t* hasha = ph_mh_imagehash(_Param1.c_str(), hashalen, alpha, lvl);
+	uint8_t* hashb = ph_mh_imagehash(_Param2.c_str(), hashblen, alpha, lvl);	
 	
 	double hamming_distance = ph_hammingdistance2(hasha, hashalen, hashb, hashblen);
 	returnValue.setDoubleValue(hamming_distance);		
@@ -156,9 +176,14 @@ void PH_Compare_RADISH(sLONG_PTR *pResult, PackagePtr pParams)
 	
 	Digest x, y;
 	double pcc = 0;
-	int status = ph_image_digest(paramToPathStr(Param1), sigma, gamma, x, N);
+	
+	std::string _Param1, _Param2;
+	paramToPathStr(Param1, _Param1);
+	paramToPathStr(Param2, _Param2);
+	
+	int status = ph_image_digest(_Param1.c_str(), sigma, gamma, x, N);
 	if(status == 0){
-		status = ph_image_digest(paramToPathStr(Param2), sigma, gamma, y, N);
+		status = ph_image_digest(_Param2.c_str(), sigma, gamma, y, N);
 		if(status == 0){
 			ph_crosscorr(x, y, pcc, threshold);	
 		}	
@@ -175,15 +200,16 @@ void PH_Compute_DCT(sLONG_PTR *pResult, PackagePtr pParams)
 	C_TEXT Param1;
 	C_TEXT Param2;
 	C_LONGINT returnValue;
-
+	
 	Param1.fromParamAtIndex(pParams, 1);
-
+	
 	ulong64 hash;
 	
-	int status = ph_dct_imagehash(paramToPathStr(Param1), hash);
+	std::string _Param1;
+	paramToPathStr(Param1, _Param1);
 	
-	CUTF8String hashStr((const uint8_t *)int64ToStr(hash));
-	Param2.setUTF8String(&hashStr);
+	int status = ph_dct_imagehash(_Param1.c_str(), hash);
+	int64ToParam(hash, Param2);
 	Param2.toParamAtIndex(pParams, 2);
 	
 	returnValue.setIntValue(status);

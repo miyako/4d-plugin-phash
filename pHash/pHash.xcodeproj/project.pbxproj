@@ -471,7 +471,7 @@
 				OBJROOT = "$(SRCROOT)/build";
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				SYMROOT = "$(SRCROOT)/pHash.4dbase/Plugins";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/include/**";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/include/MacOS/**";
 			};
 			name = Development;
 		};
@@ -490,7 +490,7 @@
 				OBJROOT = "$(SRCROOT)/build";
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				SYMROOT = "$(SRCROOT)/pHash.4dbase/Plugins";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/include/**";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/include/MacOS/**";
 			};
 			name = Deployment;
 		};
@@ -507,7 +507,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				SYMROOT = "$(SRCROOT)/pHash.4dbase/Plugins";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/include/**";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/include/MacOS/**";
 			};
 			name = Default;
 		};
