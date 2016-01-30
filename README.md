@@ -5,11 +5,30 @@ This plugin is a 4D implementation of the [pHash] (http://www.phash.org/) open s
 It can compute and compare the perceptual hashes of PNG, BMP and JPEG files.
 You can use it, for example, to search similar images of different file types stored in your database.
 
+##Platform
+
+| carbon | cocoa | win32 | win64 |
+|:------:|:-----:|:---------:|:---------:|
+|🆗|🚫|🆗|🆗|
+
+Commands
+---
+
+```c
+// --- Compute
+PH_Compute_DCT
+
+// --- Compare
+PH_Compare_MH
+PH_Compare_RADISH
+PH_Compare_DCT
+```
+
 __Note__: Audio and Video files are not supported.
 
 __Note__: If you create the PNG on Mac OS, make sure the "simple file" option is NOT used. Otherwise the hash value will be zero.
 
-Example
+Examples
 -------
 ```
 $fileA:=Get 4D folder(Current Resources folder)+"2004Cogs.jpg"
