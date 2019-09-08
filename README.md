@@ -23,7 +23,7 @@ Image hash based on [pHash](http://www.phash.org/).
 
 ### Syntax
 
-[miyako.github.io]()
+[miyako.github.io](https://miyako.github.io/2019/09/09/4d-plugin-phash.html)
 
 ### Examples
 
