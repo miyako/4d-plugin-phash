@@ -1,6 +1,0 @@
-export CC="gcc"
-export CXX="g++"
-export CXXFLAGS="-arch i386"
-export LDFLAGS="-arch i386"
-export CFLAGS="-arch i386 -isysroot /Xcode3/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5"
-export CPPFLAGS="-arch i386"

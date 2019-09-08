@@ -10,14 +10,12 @@
 #define __C_TEXT_H__ 1
 
 #include "4DPluginAPI.h"
+#include "C_TYPES.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-	typedef std::basic_string<PA_Unichar> CUTF16String;
-	typedef std::basic_string<uint8_t> CUTF8String;	
-	
 	class C_TEXT
 	{
 		
