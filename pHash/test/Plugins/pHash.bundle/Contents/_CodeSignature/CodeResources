@@ -8,7 +8,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			P7lbFB+5DOo5kOq/dmvrbl7LAXk=
+			H8p2+TXRv8Y90rHBPEALPVFfJgY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -35,11 +35,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			P7lbFB+5DOo5kOq/dmvrbl7LAXk=
+			H8p2+TXRv8Y90rHBPEALPVFfJgY=
 			</data>
 			<key>hash2</key>
 			<data>
-			hFnwCviHExiNa/JUebwtyLM3Cd6KCwLKWGfjgtyhzM0=
+			b+/2bEutzX8M4Tt8Pg7pTvxQq2429tsGi9g4G2SzLvg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -59,22 +59,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4U405GYn8pTtbe3/SNxoG2r41mM=
+			xez8GNfjPLLlvZIhCNW+/h6XIo8=
 			</data>
 			<key>hash2</key>
 			<data>
-			E6FSkp+ZAbhmf13L9z9kr+VXzpJ5SJsBNcrvRw5lIks=
+			qPJudBp1hrxh+Nwog0SAWhZEDKTOJa5xnUvw1HCWLzk=
 			</data>
 		</dict>
 		<key>Windows64/pHash.4DX</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6MmUhzwRW33b0mo07o+C2ueogBE=
+			le3oruNOU7EX4+iq8e5UeWHm/kE=
 			</data>
 			<key>hash2</key>
 			<data>
-			V+YSirTQ14ewb3LgXKLJPGK6iIwtq4ULIvC8fFdmON8=
+			Qqd+sqUcNeeVDFMBNmUpItzo+qwbE3M4sIiWAO0jOjM=
 			</data>
 		</dict>
 		<key>manifest.json</key>

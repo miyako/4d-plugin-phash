@@ -189,12 +189,12 @@
 		"stamp": "2019-07-07T00:13:49.000Z"
 	},
 	"Sources/Methods/test.4dm": {
-		"startSelection": 51,
-		"endSelection": 51,
-		"firstSelectedLine": 41,
-		"lastSelectedLine": 41,
+		"startSelection": 15,
+		"endSelection": 15,
+		"firstSelectedLine": 40,
+		"lastSelectedLine": 40,
 		"folding": [],
 		"bookmarks": [],
-		"stamp": "2019-09-09T02:10:14.433Z"
+		"stamp": "2019-09-09T03:17:21.249Z"
 	}
 }
