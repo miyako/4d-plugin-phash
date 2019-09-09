@@ -18,7 +18,6 @@
 		D11FBA402325B589004F365C /* libtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D11FBA3B2325B589004F365C /* libtiff.a */; };
 		D11FBA412325B589004F365C /* libpng16.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D11FBA3C2325B589004F365C /* libpng16.a */; };
 		D11FBA422325B589004F365C /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D11FBA3D2325B589004F365C /* libjpeg.a */; };
-		D11FBA432325B589004F365C /* libpHash.1.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D11FBA3E2325B589004F365C /* libpHash.1.0.0.a */; };
 		D11FBA452325B767004F365C /* pHash.h in Headers */ = {isa = PBXBuildFile; fileRef = D11FBA442325B767004F365C /* pHash.h */; };
 		D11FBA472325B783004F365C /* CImg.h in Headers */ = {isa = PBXBuildFile; fileRef = D11FBA462325B783004F365C /* CImg.h */; };
 		D11FBA4B2325B828004F365C /* C_TEXT.h in Headers */ = {isa = PBXBuildFile; fileRef = D11FBA482325B827004F365C /* C_TEXT.h */; };
@@ -28,6 +27,7 @@
 		D11FBA532325B85C004F365C /* C_REAL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D11FBA4F2325B85C004F365C /* C_REAL.cpp */; };
 		D11FBA542325B85C004F365C /* C_LONGINT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D11FBA502325B85C004F365C /* C_LONGINT.cpp */; };
 		D11FBA552325B85C004F365C /* C_REAL.h in Headers */ = {isa = PBXBuildFile; fileRef = D11FBA512325B85C004F365C /* C_REAL.h */; };
+		D11FBA572325D9E1004F365C /* libpHash.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D11FBA562325D9E1004F365C /* libpHash.a */; };
 		D120937F13534DCC00A72CAA /* 4DPlugin-pHash.h in Headers */ = {isa = PBXBuildFile; fileRef = D120937E13534DCC00A72CAA /* 4DPlugin-pHash.h */; };
 		D130064F12F02D9700702C0E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D130064E12F02D9700702C0E /* Cocoa.framework */; };
 		D13116A91A03ACB700DE1322 /* 4DPluginAPI.c in Sources */ = {isa = PBXBuildFile; fileRef = D13116A81A03ACB700DE1322 /* 4DPluginAPI.c */; settings = {COMPILER_FLAGS = "-Wno-multichar"; }; };
@@ -61,7 +61,6 @@
 		D11FBA3B2325B589004F365C /* libtiff.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtiff.a; path = a/libtiff.a; sourceTree = "<group>"; };
 		D11FBA3C2325B589004F365C /* libpng16.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpng16.a; path = a/libpng16.a; sourceTree = "<group>"; };
 		D11FBA3D2325B589004F365C /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjpeg.a; path = a/libjpeg.a; sourceTree = "<group>"; };
-		D11FBA3E2325B589004F365C /* libpHash.1.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpHash.1.0.0.a; path = a/libpHash.1.0.0.a; sourceTree = "<group>"; };
 		D11FBA442325B767004F365C /* pHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pHash.h; path = include/pHash/pHash.h; sourceTree = "<group>"; };
 		D11FBA462325B783004F365C /* CImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CImg.h; path = include/CImg/CImg.h; sourceTree = "<group>"; };
 		D11FBA482325B827004F365C /* C_TEXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C_TEXT.h; path = "4D Plugin API/Classes/C_TEXT.h"; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		D11FBA4F2325B85C004F365C /* C_REAL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = C_REAL.cpp; path = "4D Plugin API/Classes/C_REAL.cpp"; sourceTree = "<group>"; };
 		D11FBA502325B85C004F365C /* C_LONGINT.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = C_LONGINT.cpp; path = "4D Plugin API/Classes/C_LONGINT.cpp"; sourceTree = "<group>"; };
 		D11FBA512325B85C004F365C /* C_REAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = C_REAL.h; path = "4D Plugin API/Classes/C_REAL.h"; sourceTree = "<group>"; };
+		D11FBA562325D9E1004F365C /* libpHash.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpHash.a; path = a/libpHash.a; sourceTree = "<group>"; };
 		D120937E13534DCC00A72CAA /* 4DPlugin-pHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "4DPlugin-pHash.h"; sourceTree = "<group>"; };
 		D130064E12F02D9700702C0E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		D13116A81A03ACB700DE1322 /* 4DPluginAPI.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = 4DPluginAPI.c; sourceTree = "<group>"; };
@@ -83,11 +83,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D11FBA572325D9E1004F365C /* libpHash.a in Frameworks */,
 				D11FBA3F2325B589004F365C /* libz.a in Frameworks */,
 				D11FBA402325B589004F365C /* libtiff.a in Frameworks */,
 				D11FBA412325B589004F365C /* libpng16.a in Frameworks */,
 				D11FBA422325B589004F365C /* libjpeg.a in Frameworks */,
-				D11FBA432325B589004F365C /* libpHash.1.0.0.a in Frameworks */,
 				D130064F12F02D9700702C0E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,8 +177,8 @@
 		D16FBB3C22A4C07E008F0416 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D11FBA562325D9E1004F365C /* libpHash.a */,
 				D11FBA3D2325B589004F365C /* libjpeg.a */,
-				D11FBA3E2325B589004F365C /* libpHash.1.0.0.a */,
 				D11FBA3C2325B589004F365C /* libpng16.a */,
 				D11FBA3B2325B589004F365C /* libtiff.a */,
 				D11FBA3A2325B589004F365C /* libz.a */,
@@ -358,7 +358,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "include/**";
+				HEADER_SEARCH_PATHS = include/pHash;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LIBRARY_SEARCH_PATHS = (
@@ -409,7 +409,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "include/**";
+				HEADER_SEARCH_PATHS = include/pHash;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LIBRARY_SEARCH_PATHS = (
@@ -458,7 +458,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "include/**";
+				HEADER_SEARCH_PATHS = include/pHash;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				LIBRARY_SEARCH_PATHS = (

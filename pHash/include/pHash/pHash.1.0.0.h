@@ -1,7 +1,7 @@
 /*
 
     pHash, the open source perceptual hash library
-    Copyright (C) 2008-2009 Aetilius, Inc.
+    Copyright (C) 2008-2013 Aetilius, Inc.
     All rights reserved.
 
     This program is free software: you can redistribute it and/or modify
@@ -26,7 +26,6 @@
 #define _PHASH_H
 
 
-#include <pHash-config.h>
 #include <limits.h>
 #include <math.h>
 #include <dirent.h>
@@ -44,7 +43,17 @@
 
 #include <stdint.h>
 
+#define HAVE_IMAGE_HASH
+/* #undef HAVE_AUDIO_HASH */
+/* #undef HAVE_VIDEO_HASH */
+/* #undef HAVE_LIBMPG123 */
+
+#define PACKAGE_STRING "pHash"
+
 #if defined(HAVE_IMAGE_HASH) || defined(HAVE_VIDEO_HASH)
+#define cimg_use_png 1
+#define cimg_use_jpeg 1
+#define cimg_use_tiff 1
 #define cimg_debug 0
 #define cimg_display 0
 #include "CImg.h"
@@ -74,78 +83,21 @@ using namespace std;
 typedef unsigned _uint64 ulong64;
 typedef signed _int64 long64;
 #else
-typedef unsigned long long ulong64;
-typedef signed long long long64;
+typedef uint64_t ulong64;
+typedef  int64_t  long64;
 #endif
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-const int MaxFileSize = (1<<30); /* 1GB file size limit (for mvp files) */
-const off_t HeaderSize = 64;     /* header size for mvp file */
-
-
-typedef struct ph_file_offset {
-    off_t offset;
-    uint8_t fileno;
-} FileIndex;
-
-
-/* structure for a single hash */
-typedef struct ph_datapoint {
-    char *id;
-    void *hash;
-    float *path;
-    uint32_t hash_length;
-    uint8_t hash_type;
-}DP;
-
-typedef struct ph_slice {
-    DP **hash_p;
-    int n;
-    void *hash_params;
-} slice;
-
-struct BinHash 
-{
-	uint8_t *hash;
-	uint32_t bytelength;
-	uint32_t byteidx; // used by addbit()
-	uint8_t bitmask;  // used by addbit()
-
-	/*
-	 * add a single bit to hash. the bits are 
-	 * written from left to right.
-	 */
-	int addbit(uint8_t bit)
-	{
-		if (bitmask == 0) 
-		{
-			bitmask = 128; // reset bitmask to "10000000"
-			byteidx++;     // jump to next byte in array
-		}
-
-		if (byteidx >= bytelength) return -1;
-		
-		if (bit == 1) *(hash + byteidx) |= bitmask;
-		bitmask >>=1;
-		return 0;
-	}	
-};
-
-BinHash* _ph_bmb_new(uint32_t bytelength);
-void ph_bmb_free(BinHash *binHash);
-
 /*! /brief Radon Projection info
  */
-#ifdef HAVE_IMAGE_HASH
 typedef struct ph_projections {
     CImg<uint8_t> *R;           //contains projections of image of angled lines through center
     int *nb_pix_perline;        //the head of int array denoting the number of pixels of each line
     int size;                   //the size of nb_pix_perline
 }Projections;
-#endif
 
 /*! /brief feature vector info
  */
@@ -181,20 +133,6 @@ typedef struct ph_match{
     uint32_t length;    /*length of match between 2 files */
 } TxtMatch;
 
-#ifdef HAVE_PTHREAD
-int ph_num_threads();
-#endif
-
-/* /brief alloc a single data point
- *  allocates path array, does nto set id or path
- */
- DP* ph_malloc_datapoint(int hashtype);
-
-/** /brief free a datapoint and its path
- *
- */
-void ph_free_datapoint(DP *dp);
-
 /*! /brief copyright information
  */
 const char* ph_about();
@@ -207,7 +145,6 @@ const char* ph_about();
  *  /param  projs - (out) Projections struct 
  *  /return int value - less than 0 for error
  */
-#ifdef HAVE_IMAGE_HASH
 int ph_radon_projections(const CImg<uint8_t> &img,int N,Projections &projs);
 
 /*! /brief feature vector
@@ -284,13 +221,6 @@ int _ph_compare_images(const CImg<uint8_t> &imA,const CImg<uint8_t> &imB,double 
  */
 int ph_compare_images(const char *file1, const char *file2,double &pcc, double sigma = 3.5, double gamma=1.0, int N=180,double threshold=0.90);
 
-/*! /brief return dct matrix, C
- *  Return DCT matrix of sqare size, N
- *  /param N - int denoting the size of the square matrix to create.
- *  /return CImg<double> size NxN containing the dct matrix
- */
-static CImg<float>* ph_dct_matrix(const int N);
-
 /*! /brief compute dct robust image hash
  *  /param file string variable for name of file
  *  /param hash of type ulong64 (must be 64-bit variable)
@@ -298,19 +228,11 @@ static CImg<float>* ph_dct_matrix(const int N);
  */
 int ph_dct_imagehash(const char* file,ulong64 &hash);
 
-int ph_bmb_imagehash(const char *file, uint8_t method, BinHash **ret_hash);
-#endif
-
-#ifdef HAVE_PTHREAD
-DP** ph_dct_image_hashes(char *files[], int count, int threads = 0);
-#endif
 
 #ifdef HAVE_VIDEO_HASH
 static CImgList<uint8_t>* ph_getKeyFramesFromVideo(const char *filename);
 
 ulong64* ph_dct_videohash(const char *filename, int &Length);
-
-DP** ph_dct_video_hashes(char *files[], int count, int threads = 0);
 
 double ph_dct_videohash_dist(ulong64 *hashA, int N1, ulong64 *hashB, int N2, int threshold=21);
 #endif
@@ -321,17 +243,7 @@ double ph_dct_videohash_dist(ulong64 *hashA, int N1, ulong64 *hashB, int N2, int
  *   /param hash ulong64 value for hash value
  *   /return int value - less than 0 for error
  */
-#ifdef HAVE_IMAGE_HASH
 int ph_hamming_distance(const ulong64 hash1,const ulong64 hash2);
-
-/** /brief create a list of datapoint's directly from a directory of image files
- *  /param dirname - path and name of directory containg all image file names
- *  /param capacity - int value for upper limit on number of hashes
- *  /param count - number of hashes created (out param)
- *  /return pointer to a list of DP pointers (NULL for error)
- */
-
-DP** ph_read_imagehashes(const char *dirname,int capacity, int &count);
 
 /** /brief create MH image hash for filename image
 *   /param filename - string name of image file
@@ -341,7 +253,7 @@ DP** ph_read_imagehashes(const char *dirname,int capacity, int &count);
 *   /return uint8_t array
 **/
 uint8_t* ph_mh_imagehash(const char *filename, int &N, float alpha=2.0f, float lvl = 1.0f);
-#endif
+
 /** /brief count number bits set in given byte
 *   /param val - uint8_t byte value
 *   /return int value for number of bits set
@@ -356,16 +268,6 @@ int ph_bitcount8(uint8_t val);
  *  /return double value for normalized hamming distance
  **/
 double ph_hammingdistance2(uint8_t *hashA, int lenA, uint8_t *hashB, int lenB);
-
-/** /brief get all the filenames in specified directory
- *  /param dirname - string value for path and filename
- *  /param cap - int value for upper limit to number of files
- *  /param count - int value for number of file names returned
- *  /return array of pointers to string file names (NULL for error)
- **/
-
-char** ph_readfilenames(const char *dirname,int &count);
-
 
 /** /brief textual hash for file
  *  /param filename - char* name of file

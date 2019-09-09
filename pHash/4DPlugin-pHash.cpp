@@ -54,24 +54,17 @@ void PH_Compute_DCT(PA_PluginParameters params) {
     C_LONGINT returnValue;
     
     Param1.fromParamAtIndex(pParams, 1);
-    Param2.fromParamAtIndex(pParams, 2);
-    CUTF8String _hasha, _hashb;
     
-    Param1.copyUTF8String(&_hasha);
-    Param2.copyUTF8String(&_hashb);
+    ulong64 hash;
     
-    std::stringstream _Param1((const char *)_hasha.c_str());
-    std::stringstream _Param2((const char *)_hashb.c_str());
+    std::string _Param1;
+    paramToPathStr(Param1, _Param1);
     
-    ulong64 hasha;
-    ulong64 hashb;
+    int status = ph_dct_imagehash(_Param1.c_str(), hash);
+    int64ToParam(hash, Param2);
+    Param2.toParamAtIndex(pParams, 2);
     
-    _Param1 >> hasha;
-    _Param2 >> hashb;
-    
-    int hamming_distance = ph_hamming_distance(hasha, hashb);
-    
-    returnValue.setIntValue(hamming_distance);
+    returnValue.setIntValue(status);
     returnValue.setReturn(pResult);
 }
 
@@ -93,7 +86,7 @@ void PH_Compare_MH(PA_PluginParameters params) {
     
     float alpha = Param3.getDoubleValue();
     float lvl = Param4.getDoubleValue();
-    int hashalen, hashblen;
+    int hashalen = 0, hashblen = 0;
     
     std::string _Param1, _Param2;
     paramToPathStr(Param1, _Param1);
@@ -159,17 +152,24 @@ void PH_Compare_DCT(PA_PluginParameters params) {
     C_LONGINT returnValue;
     
     Param1.fromParamAtIndex(pParams, 1);
+    Param2.fromParamAtIndex(pParams, 2);
+    CUTF8String _hasha, _hashb;
     
-    ulong64 hash;
+    Param1.copyUTF8String(&_hasha);
+    Param2.copyUTF8String(&_hashb);
     
-    std::string _Param1;
-    paramToPathStr(Param1, _Param1);
+    std::stringstream _Param1((const char *)_hasha.c_str());
+    std::stringstream _Param2((const char *)_hashb.c_str());
     
-    int status = ph_dct_imagehash(_Param1.c_str(), hash);
-    int64ToParam(hash, Param2);
-    Param2.toParamAtIndex(pParams, 2);
+    ulong64 hasha;
+    ulong64 hashb;
     
-    returnValue.setIntValue(status);
+    _Param1 >> hasha;
+    _Param2 >> hashb;
+    
+    int hamming_distance = ph_hamming_distance(hasha, hashb);
+    
+    returnValue.setIntValue(hamming_distance);
     returnValue.setReturn(pResult);
 }
 
