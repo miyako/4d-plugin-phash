@@ -17,7 +17,7 @@ Image hash based on [pHash](http://www.phash.org/).
 
 #### Releases
 
-[2.0](https://github.com/miyako/4d-plugin-phash/releases/tag/2.0)
+[2.2](https://github.com/miyako/4d-plugin-phash/releases/tag/2.2)
 
 #### Supported image formats
 
