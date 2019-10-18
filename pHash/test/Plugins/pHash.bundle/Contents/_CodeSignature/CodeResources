@@ -8,7 +8,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			H8p2+TXRv8Y90rHBPEALPVFfJgY=
+			78sFhJAMh+bORSI/jh5DjXOMfCQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -22,10 +22,6 @@
 	<dict>
 		<key>QuickLook/Thumbnail.png</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			hC+U8EqvyIRM1lLakHLfvl4V9Tc=
-			</data>
 			<key>hash2</key>
 			<data>
 			nGfrvibB5KlzvZgF4Bra+l0HpRloxismgTLePnOwCdk=
@@ -33,23 +29,15 @@
 		</dict>
 		<key>Resources/English.lproj/InfoPlist.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			H8p2+TXRv8Y90rHBPEALPVFfJgY=
-			</data>
 			<key>hash2</key>
 			<data>
-			b+/2bEutzX8M4Tt8Pg7pTvxQq2429tsGi9g4G2SzLvg=
+			NZFUbN7GKjbUrT84HMtq34pSu0iNPFGkHK77SVsIxe8=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
 		<key>Resources/constants.xlf</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			c8aS/qfx0jHBXvHTUysbg5oiGdw=
-			</data>
 			<key>hash2</key>
 			<data>
 			yJ7he0XeXgM2TE+voZvb+kd5cAWVyJzjc+E3lZ+ewtM=
@@ -57,10 +45,6 @@
 		</dict>
 		<key>Windows/pHash.4DX</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			xez8GNfjPLLlvZIhCNW+/h6XIo8=
-			</data>
 			<key>hash2</key>
 			<data>
 			qPJudBp1hrxh+Nwog0SAWhZEDKTOJa5xnUvw1HCWLzk=
@@ -68,10 +52,6 @@
 		</dict>
 		<key>Windows64/pHash.4DX</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			le3oruNOU7EX4+iq8e5UeWHm/kE=
-			</data>
 			<key>hash2</key>
 			<data>
 			Qqd+sqUcNeeVDFMBNmUpItzo+qwbE3M4sIiWAO0jOjM=
@@ -81,10 +61,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Unp9Z/UTQCpFb2yhiRWe9GxTsVI=
+			K86/ahSSKpLhCWohH96ZhI0yLLs=
 			</data>
 			<key>requirement</key>
-			<string>identifier manifest and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: keisuke miyako (4W9UT59D3B)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			<string>identifier manifest and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = Y69CWUC25B</string>
 		</dict>
 	</dict>
 	<key>rules</key>
