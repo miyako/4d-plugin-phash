@@ -1,5 +1,9 @@
-4d-plugin-phash
-===============
+![version](https://img.shields.io/badge/version-17%2B-3E8B93)
+![platform](https://img.shields.io/static/v1?label=platform&message=mac-intel%20|%20mac-arm%20|%20win-64&color=blue)
+[![license](https://img.shields.io/github/license/miyako/4d-plugin-phash)](LICENSE)
+![downloads](https://img.shields.io/github/downloads/miyako/4d-plugin-phash/total)
+
+# 4d-plugin-phash
 
 Image hash based on [pHash](https://github.com/aetilius/pHash).
 
@@ -15,7 +19,7 @@ Image hash based on [pHash](https://github.com/aetilius/pHash).
 
 ### Examples
 
-```
+```4d
 $fileA:=Get 4D folder(Current resources folder)+"2004Cogs.jpg"
 $fileB:=Get 4D folder(Current resources folder)+"2004Cogs.bmp"
 $fileC:=Get 4D folder(Current resources folder)+"2004Cogs.png"
