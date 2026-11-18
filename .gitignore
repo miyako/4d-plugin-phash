@@ -1,0 +1,9 @@
+.DS_Store
+build/
+*.4dbase/Logs/
+*.4dbase/userPreferences.*/
+test/Data/Logs/
+test/userPreferences.*/
+test/Project/DerivedData/
+/pHash.dmg
+/pHash.zip
